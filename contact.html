@@ -82,6 +82,7 @@
     <h1 style="text-align: center">Contact Me</h1>
     <br />
     <form
+      onsubmit="getdata(event)"
       style="
         background-color: white;
         border: 2px solid #000;
@@ -109,25 +110,25 @@
           font-size: 25px;
         }
       </style>
-      <label for="fname">Name:</label>
-      <input type="text" id="fname" name="fname" />
-      <label for="lemail">Email:</label>
-      <input type="text" id="femail" name="femail" />
-      <label for="lphone">Phone Number:</label>
-      <input type="text" id="fphone" name="fphone" />
+      <label for="name">Name:</label>
+      <input type="text" id="name" />
+      <label for="email">Email:</label>
+      <input type="text" id="email" />
+      <label for="phone">Phone Number:</label>
+      <input type="text" id="phone" />
 
-      <label for="subject">Select Your Role:</label>
-      <select id="subject">
-        <option>Select...</option>
-        <option value="fullstack">Fullstack Developer</option>
-        <option value="frontend">Frontend Developer</option>
-        <option value="backend">Backend Developer</option>
+      <label for="role">Select Your Role:</label>
+      <select id="role">
+        <option value="">Select...</option>
+        <option value="Fullstack Developer">Fullstack Developer</option>
+        <option value="Frontend Developer">Frontend Developer</option>
+        <option value="Backend Developer">Backend Developer</option>
       </select>
       <textarea
         style="border-radius: 10px; font-size: larger"
         cols="30"
         rows="10"
-        name="message"
+        id="message"
         placeholder="Write Something..."
       ></textarea>
       <input
@@ -136,5 +137,6 @@
         value="Submit"
       />
     </form>
+    <script src="assets/js/contact.js"></script>
   </body>
 </html>
