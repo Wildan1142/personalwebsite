@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Project</title>
+    <link rel="stylesheet" href="assets/css/project.css" />
+  </head>
+  <body class="body-background">
+    <nav class="navigation-bar">
+      <ul class="nav-list">
+        <li class="nav-item">
+          <img
+            class="nav-logo"
+            src="https://dumbways.id/assets/images/brandred.png"
+            alt="Brand Logo"
+          />
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="project.html">My Project</a>
+        </li>
+        <li class="nav-contact">
+          <a class="nav-link contact-link" href="contact.html">Contact Me</a>
+        </li>
+      </ul>
+    </nav>
+    <br />
+    <h1 style="text-align: center">ADD MY PROJECT</h1>
+    <form class="project-form">
+      <label for="project">Project Name</label>
+      <input class="form-input" type="text" id="project" />
+
+      <label for="start-date">Start Date</label>
+      <input class="form-input" type="date" id="start-date" />
+
+      <label for="end-date">End Date</label>
+      <input class="form-input" type="date" id="end-date" />
+
+      <label for="desc">Description</label>
+      <input class="form-input" type="text" id="desc" />
+
+      <p class="techno">Technologies</p>
+      <div class="checkbox-container">
+        <div>
+          <input type="checkbox" id="tech1" name="tech1" value="node" />
+          <label for="tech1">Node Js</label>
+        </div>
+        <div>
+          <input type="checkbox" id="tech2" name="tech2" value="next" />
+          <label for="tech2">Next Js</label>
+        </div>
+        <div>
+          <input type="checkbox" id="tech3" name="tech3" value="react" />
+          <label for="tech3">React Js</label>
+        </div>
+        <div>
+          <input type="checkbox" id="tech4" name="tech4" value="typescript" />
+          <label for="tech4">Typescript</label>
+        </div>
+        <div>
+          <label for="img">Select image:</label>
+          <input type="file" id="img" name="img" accept="image/*" />
+        </div>
+      </div>
+
+      <input class="submit-button" type="submit" value="Submit" />
+    </form>
+  </body>
+</html>
