@@ -1,48 +1,5 @@
-.body-background {
-    background-color: #f2f2f2;
-    margin: 0;
-}
 
-.navigation-bar {
-    background-color: #e6d4ba;
-}
-
-.nav-list {
-    list-style: none;
-    padding: 5px;
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-    align-items: center;
-    margin: 0;
-}
-
-.nav-item {
-    margin: 0;
-}
-
-.nav-logo {
-    object-fit: contain;
-    width: 45px;
-    height: 45px;
-    padding: 10px;
-}
-
-.nav-link {
-    text-decoration: none;
-    color: black;
-    font-weight: bold;
-    display: inline-block;
-    font-size: 20px;
-}
-
-.nav-contact {
-    background-color: orange;
-    padding: 10px;
-    border-radius: 15px;
-    margin-left: auto;
-}
-
+/* project form */
 .project-form {
     background-color: white;
     border: 2px solid #000;
@@ -57,17 +14,17 @@
     box-sizing: border-box;
 }
 
-.techno{
+.techno {
     margin-bottom: 0;
     margin-top: 0;
     font-size: 25px;
 }
 
 .form-input {
-
     padding: 10px;
     box-sizing: border-box;
-    border-radius:10px;
+    border-radius: 10px;
+    
 }
 
 label {
@@ -88,4 +45,43 @@ label {
     cursor: pointer;
     background-color: orange;
     border-radius: 10px;
+}
+
+
+/* project container */
+.project-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    padding: 10px;
+}
+
+.project-list {
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    text-align: justify;
+    font-size: 20px;
+    position: relative;
+}
+
+.project-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    display: block;
+}
+
+.delete-button, .edit-button {
+    background-color: #FF4136;
+    color: white;
+    margin-top: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
 }

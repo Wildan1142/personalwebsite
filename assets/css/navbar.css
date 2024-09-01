@@ -1,0 +1,44 @@
+.body-background {
+    background-color: #f2f2f2;
+    margin: 0;
+}
+
+.navigation-bar {
+    background-color: #e6d4ba;
+}
+
+.nav-list {
+    list-style: none;
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    margin: 0;
+}
+
+.nav-item {
+    margin: 0;
+}
+
+.nav-logo {
+    object-fit: contain;
+    width: 45px;
+    height: 45px;
+    padding: 10px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    display: inline-block;
+    font-size: 20px;
+}
+
+.nav-contact {
+    background-color: orange;
+    padding: 10px;
+    border-radius: 15px;
+    margin-left: auto;
+}

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Project</title>
     <link rel="stylesheet" href="assets/css/project.css" />
+    <link rel="stylesheet" href="assets/css/navbar.css" />
   </head>
   <body class="body-background">
     <nav class="navigation-bar">
@@ -28,45 +29,60 @@
       </ul>
     </nav>
     <br />
-    <h1 style="text-align: center">ADD MY PROJECT</h1>
-    <form class="project-form">
-      <label for="project">Project Name</label>
-      <input class="form-input" type="text" id="project" />
 
-      <label for="start-date">Start Date</label>
-      <input class="form-input" type="date" id="start-date" />
+    <div>
+      <h1 style="text-align: center">ADD MY PROJECT</h1>
+      <form onsubmit="getwork(event)" class="project-form">
+        <label for="project">Project Name</label>
+        <input class="form-input" type="text" id="project" />
 
-      <label for="end-date">End Date</label>
-      <input class="form-input" type="date" id="end-date" />
+        <label for="start-date">Start Date</label>
+        <input class="form-input" type="date" id="start-date" />
 
-      <label for="desc">Description</label>
-      <input class="form-input" type="text" id="desc" />
+        <label for="end-date">End Date</label>
+        <input class="form-input" type="date" id="end-date" />
 
-      <p class="techno">Technologies</p>
-      <div class="checkbox-container">
-        <div>
-          <input type="checkbox" id="tech1" name="tech1" value="node" />
-          <label for="tech1">Node Js</label>
+        <label for="desc">Description</label>
+        <textarea
+          style="border-radius: 10px; font-size: larger"
+          cols="30"
+          rows="10"
+          id="desc"
+        ></textarea>
+
+        <p class="techno">Technologies</p>
+        <div class="checkbox-container">
+          <div>
+            <input type="checkbox" id="tech1" name="tech1" value="node" />
+            <label for="tech1">Node Js</label>
+          </div>
+          <div>
+            <input type="checkbox" id="tech2" name="tech2" value="next" />
+            <label for="tech2">Next Js</label>
+          </div>
+          <div>
+            <input type="checkbox" id="tech3" name="tech3" value="react" />
+            <label for="tech3">React Js</label>
+          </div>
+          <div>
+            <input type="checkbox" id="tech4" name="tech4" value="typescript" />
+            <label for="tech4">Typescript</label>
+          </div>
+          <div>
+            <label for="img">Select image:</label>
+            <input type="file" id="img" name="img" accept="image/*" />
+          </div>
         </div>
-        <div>
-          <input type="checkbox" id="tech2" name="tech2" value="next" />
-          <label for="tech2">Next Js</label>
-        </div>
-        <div>
-          <input type="checkbox" id="tech3" name="tech3" value="react" />
-          <label for="tech3">React Js</label>
-        </div>
-        <div>
-          <input type="checkbox" id="tech4" name="tech4" value="typescript" />
-          <label for="tech4">Typescript</label>
-        </div>
-        <div>
-          <label for="img">Select image:</label>
-          <input type="file" id="img" name="img" accept="image/*" />
-        </div>
+        <input class="submit-button" type="submit" value="Submit" />
+      </form>
+
+      <hr />
+      <div>
+        <h1 style="text-align: center">My Project</h1>
       </div>
+      <div id="contents" class="project-container"></div>
+    </div>
 
-      <input class="submit-button" type="submit" value="Submit" />
-    </form>
+    <script src="assets/js/project.js"></script>
   </body>
 </html>
