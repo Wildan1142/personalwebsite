@@ -5,6 +5,8 @@
 
 .navigation-bar {
     background-color: #e6d4ba;
+    height: 80px;
+    width: 100%;
 }
 
 .nav-list {

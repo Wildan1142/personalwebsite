@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Web</title>
+    <link rel="stylesheet" href="assets/css/navbar.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
+    <style>
+      *,
+      body {
+        margin: 0;
+      }
+
+      .hamburger-button{
+        display: none;
+      }
+
+      .hamburger-container{
+        display: none;
+        width: 100%;
+        background-color: lightgrey;
+        text-align: center;
+      }
+
+      .hamburger-container a{
+        padding: 10px;
+        list-style: none;
+      }
+
+      .borderku {
+        border: 5px black solid;
+        width: 70%;
+        height: auto;
+        text-align: center;
+        margin: 60px auto;
+      }
+
+      .grid-container {
+        display: grid;
+        grid-template-columns: auto auto;
+        padding: 10px;
+        justify-content: center; 
+        align-items: center; 
+      }
+
+      .grid-item {
+        padding: 10px;
+        text-align: justify;
+        font-size: 20px;
+      }
+
+      @media screen and (max-width: 1000px) {
+        .grid-container {
+          grid-template-columns: 1fr;
+        }
+
+        .grid-item {
+          text-align: center;
+        }
+
+        figure {
+          margin: 0 auto;
+        }
+      }
+
+      @media screen and (max-width: 600px) {
+        .nav-list li a{
+          display: none;
+        }
+
+        .borderku {
+          width: 100%;
+          margin: 90px auto;
+        }
+
+        .grid-container {
+          grid-template-columns: 1fr;
+        }
+
+        .grid-item {
+          text-align: center;
+        }
+
+        figure {
+          margin: 0 auto;
+        }
+
+        .hamburger-button {
+          display: flex;
+          flex-direction: column;
+        }
+
+
+        .hamburger-container.show {
+          display: block;
+          display: flex;
+          flex-direction: column;
+        }
+      }
+
+    </style>
+  </head>
+  <body class="body-background">
+    <nav class="navigation-bar">
+      <ul class="nav-list">
+        <li class="nav-item">
+          <img
+            class="nav-logo"
+            src="https://dumbways.id/assets/images/brandred.png"
+            alt="Brand Logo"
+          />
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="project.html">My Project</a>
+        </li>
+        <li class="nav-contact">
+          <button class="hamburger-button">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <a class="nav-link" href="contactnew.html">Contact Me</a>
+        </li>
+      </ul>
+
+      <div class="hamburger-container">
+        <a href="index.html">Home</a>
+        <a href="project.html">My Project</a>
+        <a href="contact.html">Contact Me</a>
+      </div>
+    </nav>
+
+    <br />
+
+    <div class="borderku">
+      <h1 style="text-align: center; margin-top: 20px;">Hi! Welcome to my personal data</h1>
+      <div class="grid-container">
+                <div class="grid-item">
+                      
+          <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500s, when an unknown printer took a galley of type
+            and scrambled it to make a type specimen book. Lorem Ipsum is simply
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500s, when an unknown printer took a galley of type
+            and scrambled it to make a type specimen book.
+          </p>
+          <br />
+          <p>
+            It has survived not only five centuries, but also the leap into
+            electronic typesetting, remaining essentially unchanged. It was
+            popularised in the 1960s with the release of Letraset sheets
+            containing Lorem Ipsum passages, and more recently with desktop
+            publishing software like Aldus PageMaker including versions of Lorem
+            Ipsum. Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500s, when an unknown printer took a galley of type
+            and scrambled it to make a type specimen book.
+          </p>
+          
+        </div>
+        <div class="grid-item">
+        <figure style="text-align: center; margin: auto">
+          <img
+            style="
+              width: 250px;
+              height: 250px;
+              object-fit: cover;
+              border-radius: 10px;
+              display: block;
+              margin: 20px auto;
+            "
+            src="https://wl-brightside.cf.tsp.li/resize/728x/jpg/9b6/b68/6c70db5f149b4ec6952c412c16.jpg"
+            alt="Image"
+          />
+          <figcaption
+            style="
+              background-color: rgba(83, 80, 80, 0.993);
+              color: white;
+              padding: 5px;
+              border-radius: 10px;
+              width: 400px;
+              display: inline-block;
+              font-weight: bolder;
+              font-size: 18px;
+            "
+          >
+            Wildan Bagus Pratama - Fullstack Developer
+          </figcaption>
+        </figure>
+        <br />
+        <li
+          style="
+            list-style: none;
+            background-color: orange;
+            padding: 5px;
+            border-radius: 10px;
+            margin: auto;
+            width: 200px;
+            font-weight: bolder;
+            font-size: 18px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+          "
+        >
+          <a
+            href="assets/files/cv.pdf"
+            download
+            target="_blank"
+            style="
+              display: flex;
+              align-items: center;
+              gap: 10px;
+              text-decoration: none;
+              color: inherit;
+            "
+          >
+            Download CV
+
+            <img
+              src="https://i.pinimg.com/474x/63/a4/35/63a435bf71e6627eedce9b91a0859c89.jpg"
+              style="
+                width: 30px;
+                height: 30px;
+                object-fit: cover;
+                border-radius: 50%;
+                mix-blend-mode: multiply;
+                display: flex;
+                flex-direction: row;
+                object-fit: contain;
+              "
+            />
+          </a>
+        </li>
+        <ul style="padding: 0; margin: 20px 0 0 0; text-align: center">
+          <li style="list-style: none; text-align: center">
+            <a
+              href="https://www.instagram.com/wildanbaguz/"
+              target="_blank"
+              style="text-decoration: none"
+            >
+              <img
+                src="https://i.pinimg.com/474x/e0/79/77/e0797764348fb0c3ad94914e046f6b5a.jpg"
+                style="
+                  width: 35px;
+                  height: 35px;
+                  object-fit: cover;
+                  border-radius: 50%;
+                  padding: 10px;
+                "
+              />
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/wildan-bagus-pratama-1b8a29252/"
+              target="_blank"
+              style="text-decoration: none"
+            >
+              <img
+                src="https://www.svgrepo.com/show/144030/linkedin-square-logo.svg"
+                style="
+                  width: 35px;
+                  height: 35px;
+                  object-fit: cover;
+                  border-radius: 50%;
+                  padding: 10px;
+                "
+              />
+            </a>
+            <a
+              href="https://www.facebook.com/"
+              target="_blank"
+              style="text-decoration: none"
+            >
+              <img
+                src="https://i.pinimg.com/originals/84/68/5b/84685ba9637a951591040426a46da70f.jpg"
+                style="
+                  width: 35px;
+                  height: 35px;
+                  object-fit: cover;
+                  border-radius: 50%;
+                  padding: 10px;
+                "
+              />
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <script>
+      const hamburgerButton = document.querySelector('.hamburger-button');
+      const hamburgerMenu = document.querySelector('.hamburger-container');
+
+      hamburgerButton.addEventListener('click', () => {
+        hamburgerMenu.classList.toggle('show');
+      });
+    </script>
+  </body>
+</html>

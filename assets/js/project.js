@@ -1,29 +1,38 @@
-const projects = []; // Array untuk menyimpan proyek
-
+// Fungsi untuk menambahkan proyek baru ke dalam localStorage
 function getwork(event) {
   event.preventDefault();
 
-  // Mengambil nilai dari input dengan ID yang sudah ditentukan
   const inputprojectname = document.getElementById("project").value;
   const inputstartdate = document.getElementById("start-date").value;
   const inputenddate = document.getElementById("end-date").value;
   const inputdes = document.getElementById("desc").value;
   const inputimage = document.getElementById("img").files;
 
-  // Ini digunakan untuk mengakses dan membuat URL sementara untuk setiap file gambar yang diupload oleh pengguna.
+  if (
+    !inputprojectname ||
+    !inputstartdate ||
+    !inputenddate ||
+    !inputdes ||
+    !inputimage
+  ) {
+    // Menampilkan peringatan jika ada field yang kosong
+    alert("Please fill out all required fields");
+    return;
+  }
+
+  alert("Successfully added to Home page");
+
+  const projects = JSON.parse(localStorage.getItem("projects")) || [];
+
   for (let i = 0; i < inputimage.length; i++) {
     const blobimage = URL.createObjectURL(inputimage[i]);
 
-    // Mengubah tanggal menjadi objek Date
     const startDate = new Date(inputstartdate);
     const endDate = new Date(inputenddate);
-
-    // Menghitung perbedaan bulan antara dua tanggal
     const durationInMonths =
       (endDate.getFullYear() - startDate.getFullYear()) * 12 +
       (endDate.getMonth() - startDate.getMonth());
 
-    // Membuat objek proyek dan menambahkannya ke array projects
     const project = {
       name: inputprojectname,
       startDate: inputstartdate,
@@ -36,40 +45,54 @@ function getwork(event) {
     projects.unshift(project);
   }
 
-  // Memanggil fungsi untuk menampilkan proyek yang tersimpan dalam array
-  renderProjects();
+  localStorage.setItem("projects", JSON.stringify(projects));
+  renderProjectsFromStorage(); // Update the project list after adding new projects
 }
 
-function renderProjects() {
-  // Menghasilkan HTML untuk daftar proyek dengan informasi dan tombol aksi
+// Fungsi untuk menampilkan daftar proyek di halaman indexnew.html
+function renderProjectsFromStorage() {
+  const projects = JSON.parse(localStorage.getItem("projects")) || [];
   const projectHTML = projects
     .map(
       (project, index) => `
-    <div class="project-list">
-      <img src="${
-        project.imageUrl
-      }" alt="Project Image" class="project-image" />
-      <h3>${project.name}</h3>
-      <p>Start Date: ${project.startDate}</p>
-      <p>End Date: ${project.endDate}</p>
-      <p>Duration: ${project.duration} month${
-        project.duration > 1 ? "s" : ""
-      }</p>
-      <p>Description: ${project.description}</p>
-            <button class="edit-button" onclick="editProject(${index})">Edit</button>
-      <button class="delete-button" onclick="deleteProject(${index})">Delete</button>
-    </div>
-  `
+        <div class="ms-3 mt-3">
+          <div class="card border-3" style="width: 400px; height: 450px; max-width: 400px; max-height: 450px">
+            <img
+              src="${project.imageUrl}"
+              class="card-img-top"
+              style="width: 100%; height: 200px; object-fit:cover"
+              alt="Project Image"
+            />
+            <div class="card-body">
+              <h5 class="card-title text-center">${project.name}</h5>
+              <div class="d-flex">
+                <p class="card-text">${project.startDate} - ${project.endDate}</p>
+                <p class="card-text mx-2">|</p>
+                <p class="card-text">Wildan Bagus Pratama</p>
+              </div>
+              <p class="card-text">${project.description}</p>
+              <p class="card-text">Duration: ${project.duration} months</p>
+              <a href="#" class="btn btn-primary" onclick="editProject(${index})">Edit</a>
+              <a href="#" class="btn btn-primary" onclick="deleteProject(${index})">Delete</a>
+            </div>
+          </div>
+        </div>
+      `
     )
     .join("");
 
-  // Memasukkan HTML yang dihasilkan ke dalam elemen dengan ID "contents"
-  document.getElementById("contents").innerHTML = projectHTML;
+  document.getElementById("project-list").innerHTML = projectHTML;
 }
 
+// Panggil fungsi renderProjectsFromStorage ketika halaman indexnew.html dimuat
+if (window.location.pathname.endsWith("indexnew.html")) {
+  window.onload = renderProjectsFromStorage;
+}
+
+// Fungsi untuk menghapus proyek dari localStorage
 function deleteProject(index) {
-  // Menghapus proyek berdasarkan indeks
+  const projects = JSON.parse(localStorage.getItem("projects")) || [];
   projects.splice(index, 1);
-  // Perbarui tampilan setelah penghapusan
-  renderProjects();
+  localStorage.setItem("projects", JSON.stringify(projects));
+  renderProjectsFromStorage(); // Update the project list after deletion
 }
