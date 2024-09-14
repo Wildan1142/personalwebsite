@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -52,104 +51,106 @@
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" href="indexnew.html">Home</a>
+              <a class="nav-link active" href="/index">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="projectnew.html">Add Project</a>
+              <a class="nav-link active" href="/projectnew">Add Project</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="testimonialnew.html"
-                >My Testimonial</a
-              >
+              <a class="nav-link active" href="/testimonialnew">My Testimonial</a>
             </li>
           </ul>
-          <a class="btn btn-secondary" href="contactnew.html"> Contact Me </a>
+          <a class="btn btn-secondary" href="/contactnew"> Contact Me </a>
         </div>
       </div>
     </nav>
 
     <h1 class="text-center p-3">Add Project</h1>
     <div class="container mt-4 border border-secondary border-3 p-3 fs-4">
-      <div>
-        <label for="project" class="form-label">Project Name</label>
-        <input type="project" class="form-control" id="project" />
-      </div>
-
-      <div>
-        <label for="start-date" class="form-label">Start Date</label>
-        <input id="start-date" />
-
-        <script>
-          $("#start-date").datepicker({
-            uiLibrary: "bootstrap5",
-          });
-        </script>
-      </div>
-
-      <div>
-        <label for="end-date" class="form-label">End Date</label>
-        <input id="end-date" />
-
-        <script>
-          $("#end-date").datepicker({
-            uiLibrary: "bootstrap5",
-          });
-        </script>
-      </div>
-
-      <div class="mb-3">
-        <label for="desc" class="form-label">Description</label>
-        <textarea class="form-control" id="desc" rows="4"></textarea>
-      </div>
-
-      <div>
+      <form action="/projectnew" method="post">
         <div>
-          <label for="techno" class="form-label">Technologies</label>
+          <label for="title" class="form-label">Project Name</label>
+          <input type="title" class="form-control" name="title" />
         </div>
+
         <div>
-          <div class="form-check form-check-inline">
-            <input
-              class="form-check-input"
-              type="checkbox"
-              value=""
-              id="tech1"
-            />
-            <label class="form-check-label" for="tech1"> Node Js </label>
+          <label for="startdate" class="form-label">Start Date</label>
+          <input name="startdate" />
+
+          <script>
+            $("#startdate").datepicker({ uiLibrary: "bootstrap5", });
+          </script>
+        </div>
+
+        <div>
+          <label for="enddate" class="form-label">End Date</label>
+          <input name="enddate" />
+
+          <script>
+            $("#enddate").datepicker({ uiLibrary: "bootstrap5", });
+          </script>
+        </div>
+
+        <div class="mb-3">
+          <label for="desc" class="form-label">Description</label>
+          <textarea class="form-control" name="desc" rows="4"></textarea>
+        </div>
+
+        <div>
+          <div>
+            <label for="techno" class="form-label">Technologies</label>
+          </div>
+          <div>
+            <div class="form-check form-check-inline">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value="nodejs"
+                name="tech1"
+              />
+              <label class="form-check-label" for="tech1"> Node Js </label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value="nextjs"
+                name="tech2"
+              />
+              <label class="form-check-label" for="tech2"> Next Js </label>
+            </div>
           </div>
           <div class="form-check form-check-inline">
             <input
               class="form-check-input"
               type="checkbox"
-              value=""
-              id="tech2"
+              value="rectjs"
+              name="tech3"
             />
-            <label class="form-check-label" for="tech2"> Next Js </label>
+            <label class="form-check-label" for="tech3"> React Js </label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              value="typescript"
+              name="tech4"
+            />
+            <label class="form-check-label" for="tech4"> Typescript </label>
           </div>
         </div>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" value="" id="tech3" />
-          <label class="form-check-label" for="tech3"> React Js </label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" value="" id="tech4" />
-          <label class="form-check-label" for="tech4"> Typescript </label>
-        </div>
-      </div>
 
-      <div class="mb-3">
-        <label for="img" class="form-label">Upload Image</label>
-        <input class="form-control" type="file" id="img" accept="image/*" />
-      </div>
+        <div class="mb-3">
+          <label for="img" class="form-label">Upload Image</label>
+          <input class="form-control" type="file" name="img" accept="image/*" />
+        </div>
 
-      <div class="d-flex justify-content-end">
-        <button
-          class="btn btn-primary d-flex"
-          type="button"
-          onclick="getwork(event)"
-        >
-          Submit
-        </button>
-      </div>
+        <div class="d-flex justify-content-end">
+          <button class="btn btn-primary d-flex" type="submit">
+            Submit
+          </button>
+        </div>
+      </form>
     </div>
 
     <script src="assets/js/project.js"></script>

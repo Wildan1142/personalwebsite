@@ -2,9 +2,9 @@
 function getwork(event) {
   event.preventDefault();
 
-  const inputprojectname = document.getElementById("project").value;
-  const inputstartdate = document.getElementById("start-date").value;
-  const inputenddate = document.getElementById("end-date").value;
+  const inputprojectname = document.getElementById("title").value;
+  const inputstartdate = document.getElementById("startdate").value;
+  const inputenddate = document.getElementById("enddate").value;
   const inputdes = document.getElementById("desc").value;
   const inputimage = document.getElementById("img").files;
 
